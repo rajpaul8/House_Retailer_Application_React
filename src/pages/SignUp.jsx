@@ -11,7 +11,7 @@ import {
 import { db } from "../firebase.config";
 import { setDoc, doc, serverTimestamp } from "firebase/firestore";
 import { toast } from "react-toastify";
-
+import OAuth from "../components/OAuth";
 function SignUp() {
   const [formData, setFormData] = useState({
     name: "",
@@ -115,6 +115,8 @@ function SignUp() {
             </button>
           </div>
         </form>
+        {/* Goole OAuth */}
+        <OAuth></OAuth>
         <Link to="/sign-in" className="registerLink">
           Existing Users? Please Sign In ...
         </Link>
