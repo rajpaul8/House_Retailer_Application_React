@@ -10,6 +10,7 @@ import {
 } from "firebase/auth";
 import { db } from "../firebase.config";
 import { setDoc, doc, serverTimestamp } from "firebase/firestore";
+import { toast } from "react-toastify";
 
 function SignUp() {
   const [formData, setFormData] = useState({
@@ -49,14 +50,14 @@ function SignUp() {
       delete formDataCopy.password;
       formDataCopy.timestamp = serverTimestamp();
       await setDoc(doc(db, "users", user.uid), formDataCopy);
-
+      toast.success("Successfully Signed Up");
       // Naviagate to home page once succefully store the user to the DB:
       navigate("/");
     } catch (error) {
-      alert("Something Went Wrong");
+      toast.error("Something Went Wrong While Registeration. Please Try Again.");
     }
   };
-  
+
   return (
     <>
       <div className="pageContainer">

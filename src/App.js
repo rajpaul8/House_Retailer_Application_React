@@ -6,6 +6,8 @@ import Profile from "./pages/Profile";
 import Explore from "./pages/Explore";
 import Offers from "./pages/Offers";
 import Navbar from "./components/Navbar";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
@@ -21,6 +23,7 @@ function App() {
         </Routes>
         <Navbar></Navbar>
       </BrowserRouter>
+      <ToastContainer></ToastContainer>
     </>
   );
 }
