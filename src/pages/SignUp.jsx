@@ -43,17 +43,20 @@ function SignUp() {
       updateProfile(auth.currentUser, {
         displayName: name,
       });
+
       // Storing the Data to Firebase Storeage DB that we created:
       const formDataCopy = { ...formData };
       delete formDataCopy.password;
       formDataCopy.timestamp = serverTimestamp();
       await setDoc(doc(db, "users", user.uid), formDataCopy);
+
       // Naviagate to home page once succefully store the user to the DB:
       navigate("/");
     } catch (error) {
       alert("Something Went Wrong");
     }
   };
+  
   return (
     <>
       <div className="pageContainer">

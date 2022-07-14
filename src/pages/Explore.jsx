@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
 
 function Explore() {
   return (
-    <div>Explore</div>
-  )
+    <div className="pageContainer">
+      <h1>Explore</h1>
+    </div>
+  );
 }
 
-export default Explore
+export default Explore;

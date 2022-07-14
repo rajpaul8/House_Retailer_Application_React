@@ -3,10 +3,12 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ReactComponent as ArrowRightIcon } from "../assets/svg/keyboardArrowRightIcon.svg";
 import visibilityIcon from "../assets/svg/visibilityIcon.svg";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+
 function SignIn() {
-  const [formData, setFormData] = useState({email:'',password:''});
+  const [formData, setFormData] = useState({ email: "", password: "" });
   const { email, password } = formData;
-  const [showPassword, setShowPassword] = useState(true);
+  const [showPassword, setShowPassword] = useState(false);
   const naviagte = useNavigate();
   const onChange = (e) => {
     setFormData((prevState) => ({
@@ -14,13 +16,32 @@ function SignIn() {
       [e.target.id]: e.target.value,
     }));
   };
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    // Sign-in using firebase auth
+    try {
+      const auth = getAuth();
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      if (userCredential.user) {
+        naviagte("/");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <>
       <div className="pageContainer">
         <header>
           <p className="pageHeader">Welcome Back</p>
         </header>
-        <form>
+        <form onSubmit={onSubmit}>
           <input
             className="emailInput"
             type="email"
