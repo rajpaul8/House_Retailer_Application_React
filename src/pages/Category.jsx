@@ -13,6 +13,7 @@ import Spinner from "../components/Spinner";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ListingItem from "../components/ListingItem";
+
 function Category() {
   const [listings, setListings] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -33,7 +34,6 @@ function Category() {
 
         //   Execute the query
         const querySnap = await getDocs(q);
-
         const listings = [];
         querySnap.forEach((doc) => {
           return listings.push({
@@ -41,6 +41,7 @@ function Category() {
             data: doc.data(),
           });
         });
+
         setListings(listings);
         setLoading(false);
       } catch (error) {

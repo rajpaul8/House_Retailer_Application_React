@@ -4,13 +4,12 @@ import SignUp from "./pages/SignUp";
 import ForgotPassword from "./pages/ForgotPassword";
 import Profile from "./pages/Profile";
 import Explore from "./pages/Explore";
-import Offers from "./pages/Offers";
 import Navbar from "./components/Navbar";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import PrivateRoute from "./components/PrivateRoute";
 import Category from "./pages/Category";
-
+import Offers from "./pages/Offers";
 
 function App() {
   return (
