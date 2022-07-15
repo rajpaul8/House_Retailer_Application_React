@@ -12,6 +12,7 @@ function Navbar() {
       return true;
     }
   };
+
   return (
     <footer className="navbar">
       <nav className="navbarNav">

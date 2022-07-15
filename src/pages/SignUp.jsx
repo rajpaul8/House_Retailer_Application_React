@@ -45,7 +45,7 @@ function SignUp() {
         displayName: name,
       });
 
-      // Storing the Data to Firebase Storeage DB that we created:
+      // Storing the Data to Firebase Storage DB that we created:
       const formDataCopy = { ...formData };
       delete formDataCopy.password;
       formDataCopy.timestamp = serverTimestamp();
