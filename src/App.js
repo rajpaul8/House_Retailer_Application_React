@@ -13,6 +13,8 @@ import Offers from "./pages/Offers";
 import CreateListing from "./pages/CreateListing";
 import Listing from "./pages/Listing";
 import Contact from "./pages/Contact";
+import EditListing from "./pages/EditListing";
+
 
 function App() {
   return (
@@ -35,6 +37,7 @@ function App() {
             element={<Listing />}
           ></Route>
           <Route path="/contact/:landlordId" element={<Contact />}></Route>
+          <Route path="/edit-listing/:listingId" element={<EditListing />}></Route>
         </Routes>
         <Navbar></Navbar>
       </BrowserRouter>
