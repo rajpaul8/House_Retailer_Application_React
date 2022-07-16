@@ -50,6 +50,8 @@ function Category() {
     };
     fetchListing();
   }, [params.categoryName]);
+
+  
   return (
     <>
       <div className="category">
