@@ -88,7 +88,7 @@ function CreateListing() {
     }
 
     let geolocation = {};
-    let location;
+    let Location;
 
     if (geolocationEnabled) {
       // {*** GeoLocation Disabled In Git Repo Here.... ***}
@@ -169,7 +169,7 @@ function CreateListing() {
       timestamp: serverTimestamp(),
     };
 
-    formDataCopy.location = address;
+    formDataCopy.Location = address;
     delete formDataCopy.images;
     delete formDataCopy.address;
     !formDataCopy.offer && delete formDataCopy.discountedPrice;
