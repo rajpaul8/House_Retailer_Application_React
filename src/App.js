@@ -11,7 +11,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import Category from "./pages/Category";
 import Offers from "./pages/Offers";
 import CreateListing from "./pages/CreateListing";
-
+import Listing from "./pages/Listing";
 function App() {
   return (
     <>
@@ -19,7 +19,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Explore />}></Route>
           <Route path="/offers" element={<Offers />}></Route>
-          <Route path="/category/:categoryName" element={<Category />}></Route>
           {/* Using nested routing: refer to PrivateRoute.jsx */}
           <Route path="/profile" element={<PrivateRoute />}>
             <Route path="/profile" element={<Profile />}></Route>
@@ -28,6 +27,8 @@ function App() {
           <Route path="/sign-up" element={<SignUp />}></Route>
           <Route path="/forgot-password" element={<ForgotPassword />}></Route>
           <Route path="/create-listing" element={<CreateListing />}></Route>
+          <Route path="/category/:categoryName" element={<Category />}></Route>
+          <Route path="/category/:categoryName/:listingId" element={<Listing />}></Route>
         </Routes>
         <Navbar></Navbar>
       </BrowserRouter>
